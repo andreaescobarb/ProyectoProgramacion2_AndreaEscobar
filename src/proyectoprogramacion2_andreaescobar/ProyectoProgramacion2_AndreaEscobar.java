@@ -98,7 +98,59 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[4][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[4][6] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[4][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[4][8] = new Duques('o',0,0,0,0);
+        tablero[4][8] = new Duques('o', 0, 0, 0, 0);
+        tablero[4][9] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][10] = new Duques('o', 0, 0, 0, 0);
+        tablero[4][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][12] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[4][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][14] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][15] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][16] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][17] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[4][18] = new EspacioBlanco(' ', 0, 0, 0, 0);
+
+        //tablero row 6
+        tablero[5][0] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[5][1] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][2] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[5][3] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][4] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][5] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[5][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][8] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][9] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][10] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][13] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[5][14] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][15] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][16] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[5][17] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[5][18] = new Rebeldes('•', 0, 0, 0, 0);
+
+        //tablero row 7
+        tablero[6][0] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][1] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][2] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][3] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][4] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[6][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][8] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][9] = new Duques('o', 0, 0, 0, 0);
+        tablero[6][10] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][14] = new Rebeldes('•', 0, 0, 0, 0);
+        tablero[6][15] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][16] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][17] = new EspacioBlanco(' ', 0, 0, 0, 0);
+        tablero[6][18] = new EspacioBlanco(' ', 0, 0, 0, 0);
 
         ImprimeMatriz(tablero, 0, 0);
     }
