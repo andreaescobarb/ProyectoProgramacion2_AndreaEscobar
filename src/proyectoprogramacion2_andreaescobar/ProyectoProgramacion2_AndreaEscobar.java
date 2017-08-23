@@ -7,7 +7,6 @@ public class ProyectoProgramacion2_AndreaEscobar {
     static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
-        System.out.println("Hello this shit isnt working");
         Pieza[][] tablero = new Pieza[19][19];
         //tablero row 1
         tablero[0][0] = new EspacioBlanco('X', 0, 0, 0, 0);
@@ -103,9 +102,9 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[4][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[4][6] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[4][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[4][8] = new Duques('o', 0, 0, 0, 0);
+        tablero[4][8] = new Duques('O', 0, 0, 0, 0);
         tablero[4][9] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[4][10] = new Duques('o', 0, 0, 0, 0);
+        tablero[4][10] = new Duques('O', 0, 0, 0, 0);
         tablero[4][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[4][12] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[4][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -146,7 +145,7 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[6][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[6][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[6][8] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[6][9] = new Duques('o', 0, 0, 0, 0);
+        tablero[6][9] = new Duques('O', 0, 0, 0, 0);
         tablero[6][10] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[6][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[6][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -166,9 +165,9 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[7][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[7][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[7][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[7][8] = new Duques('o', 0, 0, 0, 0);
+        tablero[7][8] = new Duques('O', 0, 0, 0, 0);
         tablero[7][9] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[7][10] = new Duques('o', 0, 0, 0, 0);
+        tablero[7][10] = new Duques('O', 0, 0, 0, 0);
         tablero[7][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[7][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[7][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -183,17 +182,17 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[8][1] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[8][2] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[8][3] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[8][4] = new Duques('o', 0, 0, 0, 0);
+        tablero[8][4] = new Duques('O', 0, 0, 0, 0);
         tablero[8][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[8][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[8][7] = new Duques('o', 0, 0, 0, 0);
+        tablero[8][7] = new Duques('O', 0, 0, 0, 0);
         tablero[8][8] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[8][9] = new Duques('o', 0, 0, 0, 0);
+        tablero[8][9] = new Duques('O', 0, 0, 0, 0);
         tablero[8][10] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[8][11] = new Duques('o', 0, 0, 0, 0);
+        tablero[8][11] = new Duques('O', 0, 0, 0, 0);
         tablero[8][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[8][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[8][14] = new Duques('o', 0, 0, 0, 0);
+        tablero[8][14] = new Duques('O', 0, 0, 0, 0);
         tablero[8][15] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[8][16] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[8][17] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -206,13 +205,13 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[9][3] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[9][4] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[9][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[9][6] = new Duques('o', 0, 0, 0, 0);
+        tablero[9][6] = new Duques('O', 0, 0, 0, 0);
         tablero[9][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[9][8] = new Duques('o', 0, 0, 0, 0);
+        tablero[9][8] = new Duques('O', 0, 0, 0, 0);
         tablero[9][9] = new Rey('R', 0, 0, 0, 0);
-        tablero[9][10] = new Duques('o', 0, 0, 0, 0);
+        tablero[9][10] = new Duques('O', 0, 0, 0, 0);
         tablero[9][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[9][12] = new Duques('o', 0, 0, 0, 0);
+        tablero[9][12] = new Duques('O', 0, 0, 0, 0);
         tablero[9][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[9][14] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[9][15] = new Rebeldes('•', 0, 0, 0, 0);
@@ -225,17 +224,17 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[10][1] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[10][2] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[10][3] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[10][4] = new Duques('o', 0, 0, 0, 0);
+        tablero[10][4] = new Duques('O', 0, 0, 0, 0);
         tablero[10][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[10][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[10][7] = new Duques('o', 0, 0, 0, 0);
+        tablero[10][7] = new Duques('O', 0, 0, 0, 0);
         tablero[10][8] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[10][9] = new Duques('o', 0, 0, 0, 0);
+        tablero[10][9] = new Duques('O', 0, 0, 0, 0);
         tablero[10][10] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[10][11] = new Duques('o', 0, 0, 0, 0);
+        tablero[10][11] = new Duques('O', 0, 0, 0, 0);
         tablero[10][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[10][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[10][14] = new Duques('o', 0, 0, 0, 0);
+        tablero[10][14] = new Duques('O', 0, 0, 0, 0);
         tablero[10][15] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[10][16] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[10][17] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -250,9 +249,9 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[11][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[11][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[11][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[11][8] = new Duques('o', 0, 0, 0, 0);
+        tablero[11][8] = new Duques('O', 0, 0, 0, 0);
         tablero[11][9] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[11][10] = new Duques('o', 0, 0, 0, 0);
+        tablero[11][10] = new Duques('O', 0, 0, 0, 0);
         tablero[11][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[11][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[11][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -272,7 +271,7 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[12][6] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[12][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[12][8] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[12][9] = new Duques('o', 0, 0, 0, 0);
+        tablero[12][9] = new Duques('O', 0, 0, 0, 0);
         tablero[12][10] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[12][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[12][12] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -313,9 +312,9 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[14][5] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[14][6] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[14][7] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[14][8] = new Duques('o', 0, 0, 0, 0);
+        tablero[14][8] = new Duques('O', 0, 0, 0, 0);
         tablero[14][9] = new EspacioBlanco(' ', 0, 0, 0, 0);
-        tablero[14][10] = new Duques('o', 0, 0, 0, 0);
+        tablero[14][10] = new Duques('O', 0, 0, 0, 0);
         tablero[14][11] = new EspacioBlanco(' ', 0, 0, 0, 0);
         tablero[14][12] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[14][13] = new EspacioBlanco(' ', 0, 0, 0, 0);
@@ -409,8 +408,14 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[18][16] = new Rebeldes('•', 0, 0, 0, 0);
         tablero[18][17] = new EspacioBlanco('X', 0, 0, 0, 0);
         tablero[18][18] = new EspacioBlanco('X', 0, 0, 0, 0);
-
+        
+        
+        System.out.println("    NEW GAME");
+        System.out.println("");
+        System.out.println("Ingrese username de jugador 1");
         String player1 = sc.next();
+        System.out.println("Ingrese username de jugador 2");
+        String player2 = sc.next();
         
         ImprimeMatriz(tablero, 0, 0);
     }
