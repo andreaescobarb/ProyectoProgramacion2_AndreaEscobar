@@ -1,5 +1,5 @@
 package proyectoprogramacion2_andreaescobar;
 
-public class Pieza {
+public abstract class Pieza {
     
 }
