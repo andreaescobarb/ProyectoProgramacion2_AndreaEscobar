@@ -7,6 +7,7 @@ public class ProyectoProgramacion2_AndreaEscobar {
     static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
+        System.out.println("Hello this shit isnt working");
         Pieza[][] tablero = new Pieza[19][19];
         //tablero row 1
         tablero[0][0] = new EspacioBlanco('X', 0, 0, 0, 0);
