@@ -4,8 +4,8 @@ package proyectoprogramacion2_andreaescobar;
 public class Duques extends Pieza{
     char tecla;
 
-    public Duques(char tecla, int x, int y, int moverx, int movery) {
-        super(x, y, moverx, movery);
+    public Duques(char tecla) {
+        super();
         this.tecla = tecla;
     }
 
@@ -27,8 +27,14 @@ public class Duques extends Pieza{
     }
 
     @Override
-    public boolean mover(Pieza[][] matriz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean mover(Pieza[][] matriz, int posx, int posy, int moverx, int movery) {
+        boolean move;
+        if (matriz[moverx][movery] instanceof EspacioBlanco) {
+            move = true;
+        } else {
+            move = false;
+        }
+        return move;
     }
 
     @Override

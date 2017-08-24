@@ -4,8 +4,8 @@ package proyectoprogramacion2_andreaescobar;
 public class Rey extends Pieza{
     char tecla;
 
-    public Rey(char tecla, int x, int y, int moverx, int movery) {
-        super(x, y, moverx, movery);
+    public Rey(char tecla) {
+        super();
         this.tecla = tecla;
     }
 
@@ -21,39 +21,6 @@ public class Rey extends Pieza{
         this.tecla = tecla;
     }
 
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    @Override
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getMoverx() {
-        return moverx;
-    }
-
-    public void setMoverx(int moverx) {
-        this.moverx = moverx;
-    }
-
-    public int getMovery() {
-        return movery;
-    }
-
-    public void setMovery(int movery) {
-        this.movery = movery;
-    }
 
     @Override
     public String toString() {
@@ -61,8 +28,14 @@ public class Rey extends Pieza{
     }
 
     @Override
-    public boolean mover(Pieza[][] matriz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean mover(Pieza[][] matriz,int posx, int posy, int moverx, int movery) {
+        boolean move;
+        if (matriz[moverx][movery] instanceof EspacioBlanco) {
+            move = true;
+        } else {
+            move = false;
+        }
+        return move;
     }
 
     @Override

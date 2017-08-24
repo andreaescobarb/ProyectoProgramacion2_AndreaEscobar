@@ -5,8 +5,8 @@ public class Rebeldes extends Pieza {
 
     char tecla;
 
-    public Rebeldes(char tecla, int x, int y, int moverx, int movery) {
-        super(x, y, moverx, movery);
+    public Rebeldes(char tecla) {
+        super();
         this.tecla = tecla;
     }
 
@@ -28,11 +28,18 @@ public class Rebeldes extends Pieza {
     }
 
     @Override
-    public boolean mover(Pieza[][] matriz) {
-        EspacioBlanco e = new EspacioBlanco();
+    public boolean mover(Pieza[][] matriz, int posx, int posy, int moverx, int movery) {
         boolean move;
-        if (matriz[x][y] instanceof EspacioBlanco) {
+        if ( posx == moverx || posy == movery ) {
+            if (matriz[moverx][movery].toString().equals('X')) {
+            System.out.println(matriz[moverx][movery]);
+            move = false;
+        } else if (matriz[moverx][movery] instanceof EspacioBlanco) {
+            System.out.println(matriz[moverx][movery]);
             move = true;
+        } else{
+            move = false;
+        }
         } else {
             move = false;
         }
@@ -41,6 +48,6 @@ public class Rebeldes extends Pieza {
 
     @Override
     public boolean comer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 }

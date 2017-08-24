@@ -3,8 +3,8 @@ package proyectoprogramacion2_andreaescobar;
 public class EspacioBlanco extends Pieza{
     char tecla;
 
-    public EspacioBlanco(char tecla, int x, int y, int moverx, int movery) {
-        super(x, y, moverx, movery);
+    public EspacioBlanco(char tecla) {
+        super();
         this.tecla = tecla;
     }
 
@@ -27,8 +27,8 @@ public class EspacioBlanco extends Pieza{
     }
 
     @Override
-    public boolean mover(Pieza[][] matriz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean mover(Pieza[][] matriz,int posx, int posy, int moverx, int movery) {
+        return false;
     }
 
     @Override
