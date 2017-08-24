@@ -25,5 +25,15 @@ public class EspacioBlanco extends Pieza{
     public String toString() {
         return "" + tecla;
     }
+
+    @Override
+    public boolean mover(Pieza[][] matriz) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean comer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

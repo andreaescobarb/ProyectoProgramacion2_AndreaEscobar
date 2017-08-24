@@ -8,6 +8,10 @@ public class ProyectoProgramacion2_AndreaEscobar {
     
     public static void main(String[] args) {
         Pieza[][] tablero = new Pieza[19][19];
+        Pieza r = new Rebeldes();
+        Pieza d = new Duques();
+        Pieza e = new EspacioBlanco();
+        Pieza rey = new Rey();
         //tablero row 1
         tablero[0][0] = new EspacioBlanco('X', 0, 0, 0, 0);
         tablero[0][1] = new EspacioBlanco('X', 0, 0, 0, 0);
@@ -410,14 +414,19 @@ public class ProyectoProgramacion2_AndreaEscobar {
         tablero[18][18] = new EspacioBlanco('X', 0, 0, 0, 0);
         
         
-        System.out.println("    NEW GAME");
+        System.out.println("                    NEW GAME");
         System.out.println("");
-        System.out.println("Ingrese username de jugador 1");
+        System.out.println("Ingrese username de jugador 1 (Controla los rebeldes)");
         String player1 = sc.next();
-        System.out.println("Ingrese username de jugador 2");
+        System.out.println("Ingrese username de jugador 2 (Controla los duques)");
         String player2 = sc.next();
+        System.out.println("Ingrese x");
+        int x = sc.nextInt();
+        System.out.println("Ingrese y");
+        int y = sc.nextInt();
         
         ImprimeMatriz(tablero, 0, 0);
+        
     }
 
     public static void ImprimeMatriz(Pieza matriz[][], int filas, int cols) {

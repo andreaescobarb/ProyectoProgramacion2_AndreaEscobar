@@ -52,5 +52,6 @@ public abstract class Pieza {
     public String toString() {
         return "Pieza{" + "x=" + x + ", y=" + y + ", moverx=" + moverx + ", movery=" + movery + '}';
     }
-    
+    public abstract boolean mover(Pieza[][] matriz);
+    public abstract boolean comer();
 }
