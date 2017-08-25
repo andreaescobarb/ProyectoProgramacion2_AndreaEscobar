@@ -13,7 +13,6 @@ public class ProyectoProgramacion2_AndreaEscobar {
         Pieza d = new Duques();
         Pieza e = new EspacioBlanco();
         Pieza rey = new Rey();
-
         tablero = matriz(19, 19);
 
         System.out.println("                    NEW GAME");
@@ -26,39 +25,97 @@ public class ProyectoProgramacion2_AndreaEscobar {
 
         boolean gamer1 = true;
         boolean gamer2 = false;
+        boolean win = false;
 
-        while (gamer1 != false) { //aqui controlo los turnos de los jugadores (Rebeldes)
-            System.out.println("JUGADOR 1:" + player1);
-            ImprimeMatriz(tablero, 0, 0);
-            System.out.println("");
+        while (win != true) {
+            while (gamer1 != false) { //aqui controlo los turnos de los jugadores (Rebeldes)
+                System.out.println("JUGADOR 1:" + player1);
+                ImprimeMatriz(tablero, 0, 0);
+                System.out.println("");
 
-            System.out.println("Ingrese POSICION X de la pieza que desea mover");
-            x = sc.nextInt();
-            System.out.println("Ingrese POSICION Y de la pieza que desea mover");
-            y = sc.nextInt();
-            System.out.println("Ingrese POSICION X donde desea mover pieza");
-            moverx = sc.nextInt();
-            System.out.println("Ingrese POSICION Y donde desea mover pieza");
-            movery = sc.nextInt();
-            if (tablero[x][y] instanceof Rebeldes) {
-                if (r.mover(tablero, x, y, moverx, movery) == true) {
-                    tablero[x][y] = new EspacioBlanco(' ');
-                    tablero[moverx][movery]= new Rebeldes('•');
-                    System.out.println("movimiento completado");
-                    gamer1 = false;
-                    gamer2 = true;
-                } else {
-                    System.out.println("Movimiento invalido");
+                System.out.println("Ingrese POSICION X de la pieza que desea mover");
+                x = sc.nextInt();
+                System.out.println("Ingrese POSICION Y de la pieza que desea mover");
+                y = sc.nextInt();
+                System.out.println("Ingrese POSICION X donde desea mover pieza");
+                moverx = sc.nextInt();
+                System.out.println("Ingrese POSICION Y donde desea mover pieza");
+                movery = sc.nextInt();
+                try {
+                    if (tablero[x][y] instanceof Rebeldes) {
+                        if (r.mover(tablero, x, y, moverx, movery) == true) {
+                            r.mover(tablero, x, y, moverx, movery);
+                            tablero[x][y] = new EspacioBlanco(' ');
+                            tablero[moverx][movery] = new Rebeldes('•');
+                            System.out.println("");
+                            System.out.println("Movimiento completado");
+                            gamer1 = false;
+                            gamer2 = true;
+                        } else {
+                            System.out.println("");
+                            System.out.println("Movimiento invalido");
+                        }
+                    } else {
+                        System.out.println("La posicion que ingreso no es PIEZA REBELDE INTENTE DE NUEVO");
+                    }
+                } catch (Exception ex) {
+                    System.out.println("");
+                    System.out.println("POSICIONES FUERA DEL TABLERO");
+                    System.out.println("");
                 }
-            } else {
-                System.out.println("La posicion que ingreso no es PIEZA REBELDE INTENTE DE NUEVO");
-            }
 
-        }
-        while (gamer2 != false) {
-            System.out.println("JUGADOR 2:" + player2);
-            ImprimeMatriz(tablero, 0, 0);
-            System.out.println("");
+            }
+            while (gamer2 != false) {
+                System.out.println("JUGADOR 2:" + player2);
+                ImprimeMatriz(tablero, 0, 0);
+                System.out.println("");
+
+                System.out.println("Ingrese POSICION X de la pieza que desea mover");
+                x = sc.nextInt();
+                System.out.println("Ingrese POSICION Y de la pieza que desea mover");
+                y = sc.nextInt();
+                System.out.println("Ingrese POSICION X donde desea mover pieza");
+                moverx = sc.nextInt();
+                System.out.println("Ingrese POSICION Y donde desea mover pieza");
+                movery = sc.nextInt();
+                try {
+                    if (tablero[x][y] instanceof Duques) {
+                        if (d.mover(tablero, x, y, moverx, movery) == true) {
+
+                            tablero[x][y] = new EspacioBlanco(' ');
+                            tablero[moverx][movery] = new Duques('O');
+                            System.out.println("Movimiento completado");
+                            gamer1 = true;
+                            gamer2 = false;
+                        } else {
+                            System.out.println("Movimiento invalido");
+                        }
+                    } else if (tablero[x][y] instanceof Rey) {
+                        if (rey.mover(tablero, x, y, moverx, movery) == true) {
+                            if (x == 9 && y == 9) {
+                                tablero[9][9] = new EspacioBlanco('X');
+                            } else {
+                                tablero[x][y] = new EspacioBlanco(' ');
+                            }
+                            tablero[moverx][movery] = new Rey('R');
+                            System.out.println("Movimiento completado");
+                            gamer1 = true;
+                            gamer2 = false;
+                        } else {
+                            System.out.println("Movimiento invalido");
+                        }
+                    } else {
+                        {
+                            System.out.println("La posicion que ingreso no es PIEZA DUQUE INTENTE DE NUEVO");
+                        }
+                    }
+                } catch (Exception ex) {
+                    System.out.println("");
+                    System.out.println("POSICIONES FUERA DEL TABLERO");
+                    System.out.println("");
+                }
+
+            }
         }
 
     }
@@ -482,5 +539,5 @@ public class ProyectoProgramacion2_AndreaEscobar {
             }
         }
     }
-    
+
 }
