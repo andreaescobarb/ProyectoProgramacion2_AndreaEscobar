@@ -120,7 +120,11 @@ public class Duques extends Pieza {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
                 if (moverx == 0) {
-                    if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                    if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques || matriz[moverx][movery + 1] instanceof Rey) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx + 1][movery] instanceof Rebeldes) {
                         if (matriz[moverx + 2][movery] instanceof Duques || matriz[moverx + 2][movery] instanceof Rey) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
@@ -130,6 +134,11 @@ public class Duques extends Pieza {
                         }
                     }
                 } else if (movery == 0) {
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques || matriz[moverx - 2][movery] instanceof Rey) {
+                            matriz[moverx - 2][movery] = new EspacioBlanco(' ');
+                        }
+                    }
                     if (matriz[moverx + 1][movery] instanceof Rebeldes) {
                         if (matriz[moverx + 2][movery] instanceof Duques || matriz[moverx + 2][movery] instanceof Rey) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
@@ -148,6 +157,10 @@ public class Duques extends Pieza {
                         if (matriz[moverx][movery - 2] instanceof Duques || matriz[moverx][movery - 2] instanceof Rey) {
                             matriz[moverx][movery - 1] = new EspacioBlanco(' ');
                         }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 2] instanceof Duques || matriz[moverx][movery + 2] instanceof Rey) {
+                            matriz[moverx][movery + 2] = new EspacioBlanco(' ');
+                        }
                     }
                 } else if (movery == 18) {
                     if (matriz[moverx - 1][movery] instanceof Rebeldes) {
@@ -157,6 +170,10 @@ public class Duques extends Pieza {
                     } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
                         if (matriz[moverx][movery - 2] instanceof Duques || matriz[moverx][movery - 2] instanceof Rey) {
                             matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques || matriz[moverx + 2][movery] instanceof Rey) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     }
                 } else if (moverx == 1) {
@@ -168,14 +185,23 @@ public class Duques extends Pieza {
                         if (matriz[moverx][movery + 2] instanceof Duques || matriz[moverx][movery + 2] instanceof Rey) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
+                    } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques || matriz[moverx][movery + 1] instanceof Rey) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
                     }
                 } else if (movery == 1) {
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques || matriz[moverx - 2][movery] instanceof Rey) {
+                            matriz[moverx - 2][movery] = new EspacioBlanco(' ');
+                        }
+                    }
                     if (matriz[moverx + 1][movery] instanceof Rebeldes) {
                         if (matriz[moverx + 2][movery] instanceof Duques || matriz[moverx + 2][movery] instanceof Rey) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
-                        if (matriz[moverx + 2][movery] instanceof Duques || matriz[moverx + 2][movery] instanceof Rey) {
+                        if (matriz[moverx][movery + 2] instanceof Duques || matriz[moverx][movery + 2] instanceof Rey) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
                     }
@@ -188,6 +214,10 @@ public class Duques extends Pieza {
                         if (matriz[moverx][movery - 2] instanceof Duques || matriz[moverx][movery - 2] instanceof Rey) {
                             matriz[moverx][movery - 1] = new EspacioBlanco(' ');
                         }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 2] instanceof Duques || matriz[moverx][movery + 2] instanceof Rey) {
+                            matriz[moverx][movery + 2] = new EspacioBlanco(' ');
+                        }
                     }
                 } else if (movery == 17) {
                     if (matriz[moverx - 1][movery] instanceof Rebeldes) {
@@ -197,6 +227,10 @@ public class Duques extends Pieza {
                     } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
                         if (matriz[moverx][movery - 2] instanceof Duques || matriz[moverx][movery - 2] instanceof Rey) {
                             matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques || matriz[moverx + 2][movery] instanceof Rey) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     }
                 } else {

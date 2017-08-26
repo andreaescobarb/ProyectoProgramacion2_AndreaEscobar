@@ -2,31 +2,31 @@ package proyectoprogramacion2_andreaescobar;
 
 //
 public class Rebeldes extends Pieza {
-    
+
     char tecla;
-    
+
     public Rebeldes(char tecla) {
         super();
         this.tecla = tecla;
     }
-    
+
     public Rebeldes() {
         super();
     }
-    
+
     public char getTecla() {
         return tecla;
     }
-    
+
     public void setTecla(char tecla) {
         this.tecla = tecla;
     }
-    
+
     @Override
     public String toString() {
         return "" + tecla;
     }
-    
+
     @Override
     public boolean mover(Pieza[][] matriz, int posx, int posy, int moverx, int movery) {
         boolean move;
@@ -70,7 +70,7 @@ public class Rebeldes extends Pieza {
                             }
                             cont++;
                         }
-                        
+
                     }
                 }
             } else {
@@ -85,18 +85,18 @@ public class Rebeldes extends Pieza {
                         }
                     }
                 }
-                
+
             }
         }
-        
+
         if (contespacios == 0) {
             if (matriz[moverx][movery] != matriz[9][9]) {
                 if (posx == moverx || posy == movery) {
                     if (matriz[moverx][movery].toString().equals('X')) {
-                        
+
                         move = false;
                     } else if (matriz[moverx][movery] instanceof EspacioBlanco) {
-                        
+
                         move = true;
                     } else {
                         move = false;
@@ -107,14 +107,14 @@ public class Rebeldes extends Pieza {
             } else {
                 move = false;
             }
-            
+
         } else {
             move = false;
         }
-        
+
         return move;
     }
-    
+
     @Override
     public Pieza[][] comer(int moverx, int movery, Pieza[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
@@ -132,12 +132,16 @@ public class Rebeldes extends Pieza {
                                 matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                             }
                         }
+                    } else if (matriz[moverx][movery - 1] instanceof Duques) {
+                        if (matriz[moverx][movery - 2] instanceof Rebeldes) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
                     } else if (matriz[moverx + 1][movery] instanceof Duques) {      //verificar el borde con los duques
                         if (matriz[moverx + 2][movery] instanceof Rebeldes) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     } else if (matriz[moverx][movery + 1] instanceof Duques) {
-                        if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 2] instanceof Rebeldes) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
                     }
@@ -159,8 +163,12 @@ public class Rebeldes extends Pieza {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     } else if (matriz[moverx][movery + 1] instanceof Duques) {
-                        if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 2] instanceof Rebeldes) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Duques) {
+                        if (matriz[moverx][movery - 2] instanceof Rebeldes) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
                         }
                     }
                 } else if (movery == 0) {                               //Verificar el borde con el rey
@@ -184,6 +192,10 @@ public class Rebeldes extends Pieza {
                         if (matriz[moverx + 2][movery] instanceof Rebeldes) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
+                    } else if (matriz[moverx - 1][movery] instanceof Duques) {
+                        if (matriz[moverx - 2][movery] instanceof Rebeldes) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
+                        }
                     }
                 } else if (movery == 1) {
                     if (matriz[moverx][movery - 1] instanceof Rey) {
@@ -205,6 +217,10 @@ public class Rebeldes extends Pieza {
                     } else if (matriz[moverx + 1][movery] instanceof Duques) {
                         if (matriz[moverx + 2][movery] instanceof Rebeldes) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx - 1][movery] instanceof Duques) {
+                        if (matriz[moverx - 2][movery] instanceof Rebeldes) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
                         }
                     }
                 } else if (moverx == 18) {
@@ -228,6 +244,10 @@ public class Rebeldes extends Pieza {
                         if (matriz[moverx][movery + 2] instanceof Rebeldes) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
+                    } else if (matriz[moverx][movery - 1] instanceof Duques) {
+                        if (matriz[moverx][movery - 2] instanceof Rebeldes) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
                     }
                 } else if (moverx == 17) {
                     if (matriz[moverx + 1][movery] instanceof Rey) {
@@ -249,6 +269,10 @@ public class Rebeldes extends Pieza {
                     } else if (matriz[moverx][movery + 1] instanceof Duques) {
                         if (matriz[moverx][movery + 2] instanceof Rebeldes) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Duques) {
+                        if (matriz[moverx][movery - 2] instanceof Rebeldes) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
                         }
                     }
                 } else if (movery == 18) {
@@ -272,6 +296,10 @@ public class Rebeldes extends Pieza {
                         if (matriz[moverx + 2][movery] instanceof Rebeldes) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
+                    } else if (matriz[moverx][movery - 1] instanceof Duques) {
+                        if (matriz[moverx][movery - 2] instanceof Rebeldes) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
                     }
                 } else if (movery == 17) {
                     if (matriz[moverx][movery + 1] instanceof Rey) {
@@ -293,6 +321,10 @@ public class Rebeldes extends Pieza {
                     } else if (matriz[moverx + 1][movery] instanceof Duques) {
                         if (matriz[moverx + 2][movery] instanceof Rebeldes) {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Duques) {
+                        if (matriz[moverx][movery - 2] instanceof Rebeldes) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
                         }
                     }
                 } else {
@@ -320,12 +352,12 @@ public class Rebeldes extends Pieza {
                                 }
                             }
                         }
-                        
+
                     } else if (matriz[moverx][movery + 1] instanceof Rey) {
                         if (matriz[moverx][movery + 2] instanceof Rebeldes) {
-                            if (matriz[moverx - 1][movery+1]instanceof Rebeldes) {
-                                if (matriz[moverx + 1][movery+1] instanceof Rebeldes) {
-                                    matriz[moverx][movery+1] = new EspacioBlanco(' ');
+                            if (matriz[moverx - 1][movery + 1] instanceof Rebeldes) {
+                                if (matriz[moverx + 1][movery + 1] instanceof Rebeldes) {
+                                    matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                                 }
                             }
                         }
@@ -345,9 +377,9 @@ public class Rebeldes extends Pieza {
                         if (matriz[moverx][movery + 2] instanceof Rebeldes) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
-                    }                    
+                    }
                 }
-                
+
             }
         }
         return matriz;
