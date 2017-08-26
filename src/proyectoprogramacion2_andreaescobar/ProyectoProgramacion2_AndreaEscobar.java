@@ -7,6 +7,7 @@ public class ProyectoProgramacion2_AndreaEscobar {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int comerx, comery;
         int x, y, moverx, movery;
         Pieza[][] tablero = new Pieza[19][19];
         Pieza r = new Rebeldes();
@@ -81,10 +82,11 @@ public class ProyectoProgramacion2_AndreaEscobar {
                 try {
                     if (tablero[x][y] instanceof Duques) {
                         if (d.mover(tablero, x, y, moverx, movery) == true) {
-
+                            System.out.println(moverx+" " +movery);
                             tablero[x][y] = new EspacioBlanco(' ');
                             tablero[moverx][movery] = new Duques('O');
                             System.out.println("Movimiento completado");
+                            tablero = d.comer(moverx, movery, tablero);
                             gamer1 = true;
                             gamer2 = false;
                         } else {
@@ -92,13 +94,11 @@ public class ProyectoProgramacion2_AndreaEscobar {
                         }
                     } else if (tablero[x][y] instanceof Rey) {
                         if (rey.mover(tablero, x, y, moverx, movery) == true) {
-                            if (x == 9 && y == 9) {
-                                tablero[9][9] = new EspacioBlanco('X');
-                            } else {
-                                tablero[x][y] = new EspacioBlanco(' ');
-                            }
+
+                            tablero[x][y] = new EspacioBlanco(' ');
                             tablero[moverx][movery] = new Rey('R');
                             System.out.println("Movimiento completado");
+                            tablero = rey.comer(moverx, movery, tablero);
                             gamer1 = true;
                             gamer2 = false;
                         } else {

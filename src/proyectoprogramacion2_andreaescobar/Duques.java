@@ -89,7 +89,7 @@ public class Duques extends Pieza {
         }
 
         if (contespacios == 0) {
-            if (matriz[moverx][movery]!= matriz[9][9]) {
+            if (matriz[moverx][movery] != matriz[9][9]) {
                 if (posx == moverx || posy == movery) {
                     if (matriz[moverx][movery].toString().equals('X')) {
 
@@ -115,7 +115,72 @@ public class Duques extends Pieza {
     }
 
     @Override
-    public boolean comer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Pieza[][] comer(int moverx, int movery, Pieza[][] matriz) {
+        //boolean comer = false;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (moverx == 0) {
+                    if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 1] instanceof Duques) {
+                            matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (movery == 0) {
+                    if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 1] instanceof Duques) {
+                            matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (moverx == 18) {
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (movery == 18) {
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else {
+
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 2] instanceof Duques) {
+                            matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    } 
+                }
+            }
+        }
+        return matriz;
     }
 }

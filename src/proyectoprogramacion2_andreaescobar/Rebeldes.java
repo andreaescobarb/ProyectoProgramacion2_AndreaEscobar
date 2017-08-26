@@ -116,7 +116,7 @@ public class Rebeldes extends Pieza {
     }
 
     @Override
-    public boolean comer() {
-        return true;
+    public Pieza[][] comer(int moverx, int movery, Pieza [][] matriz) {
+        return matriz;
     }
 }

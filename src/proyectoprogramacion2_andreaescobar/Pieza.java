@@ -10,5 +10,5 @@ public abstract class Pieza {
         return "Pieza";
     }
     public abstract boolean mover(Pieza[][] matriz,int posx, int posy, int moverx, int movery);
-    public abstract boolean comer();
+    public abstract Pieza[][] comer(int moverx, int movery, Pieza [][] matriz);
 }

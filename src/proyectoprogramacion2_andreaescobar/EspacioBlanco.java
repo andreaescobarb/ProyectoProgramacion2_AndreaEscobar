@@ -32,8 +32,8 @@ public class EspacioBlanco extends Pieza{
     }
 
     @Override
-    public boolean comer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Pieza[][] comer(int moverx, int movery, Pieza [][] matriz) {
+        return matriz;
     }
     
 }
