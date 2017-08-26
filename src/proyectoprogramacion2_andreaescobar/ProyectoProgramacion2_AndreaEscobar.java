@@ -7,7 +7,9 @@ public class ProyectoProgramacion2_AndreaEscobar {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        char resp = 's';
         int comerx, comery;
+        int cont = 0;
         int x, y, moverx, movery;
         Pieza[][] tablero = new Pieza[19][19];
         Pieza r = new Rebeldes();
@@ -27,95 +29,130 @@ public class ProyectoProgramacion2_AndreaEscobar {
         boolean gamer1 = true;
         boolean gamer2 = false;
         boolean win = false;
+        while (resp == 'S' || resp == 's') {
+            while (win != true) {
+                while (gamer1 != false) { //aqui controlo los turnos de los jugadores (Rebeldes)
+                    System.out.println("JUGADOR 1:" + player1);
+                    ImprimeMatriz(tablero, 0, 0);
+                    System.out.println("");
 
-        while (win != true) {
-            while (gamer1 != false) { //aqui controlo los turnos de los jugadores (Rebeldes)
-                System.out.println("JUGADOR 1:" + player1);
-                ImprimeMatriz(tablero, 0, 0);
-                System.out.println("");
-
-                System.out.println("Ingrese POSICION X de la pieza que desea mover");
-                x = sc.nextInt();
-                System.out.println("Ingrese POSICION Y de la pieza que desea mover");
-                y = sc.nextInt();
-                System.out.println("Ingrese POSICION X donde desea mover pieza");
-                moverx = sc.nextInt();
-                System.out.println("Ingrese POSICION Y donde desea mover pieza");
-                movery = sc.nextInt();
-                try {
-                    if (tablero[x][y] instanceof Rebeldes) {
-                        if (r.mover(tablero, x, y, moverx, movery) == true) {
-                            r.mover(tablero, x, y, moverx, movery);
-                            tablero[x][y] = new EspacioBlanco(' ');
-                            tablero[moverx][movery] = new Rebeldes('•');
-                            System.out.println("");
-                            System.out.println("Movimiento completado");
-                            gamer1 = false;
-                            gamer2 = true;
+                    System.out.println("Ingrese POSICION X de la pieza que desea mover");
+                    x = sc.nextInt();
+                    System.out.println("Ingrese POSICION Y de la pieza que desea mover");
+                    y = sc.nextInt();
+                    System.out.println("Ingrese POSICION X donde desea mover pieza");
+                    moverx = sc.nextInt();
+                    System.out.println("Ingrese POSICION Y donde desea mover pieza");
+                    movery = sc.nextInt();
+                    try {
+                        if (tablero[x][y] instanceof Rebeldes) {
+                            if (r.mover(tablero, x, y, moverx, movery) == true) {
+                                r.mover(tablero, x, y, moverx, movery);
+                                tablero[x][y] = new EspacioBlanco(' ');
+                                tablero[moverx][movery] = new Rebeldes('•');
+                                System.out.println("");
+                                System.out.println("Movimiento completado");
+                                r.comer(moverx, movery, tablero);
+                                for (int i = 0; i < tablero.length; i++) {
+                                    for (int j = 0; j < tablero[0].length; j++) {
+                                        if (tablero[i][j] instanceof Rey) {
+                                            cont++;
+                                        }
+                                    }
+                                }
+                                if (cont < 1) {
+                                    System.out.println("");
+                                    System.out.println("FELICIDADES GANASTE LA PARTIDA");
+                                    System.out.println("");
+                                    win = true;
+                                }
+                                gamer1 = false;
+                                gamer2 = true;
+                            } else {
+                                System.out.println("");
+                                System.out.println("Movimiento invalido");
+                            }
                         } else {
-                            System.out.println("");
-                            System.out.println("Movimiento invalido");
+                            System.out.println("La posicion que ingreso no es PIEZA REBELDE INTENTE DE NUEVO");
                         }
-                    } else {
-                        System.out.println("La posicion que ingreso no es PIEZA REBELDE INTENTE DE NUEVO");
+                    } catch (Exception ex) {
+                        System.out.println("");
+                        System.out.println("POSICIONES FUERA DEL TABLERO");
+                        System.out.println("");
                     }
-                } catch (Exception ex) {
-                    System.out.println("");
-                    System.out.println("POSICIONES FUERA DEL TABLERO");
-                    System.out.println("");
+
                 }
+                while (gamer2 != false) {
+                    System.out.println("JUGADOR 2:" + player2);
+                    ImprimeMatriz(tablero, 0, 0);
+                    System.out.println("");
 
-            }
-            while (gamer2 != false) {
-                System.out.println("JUGADOR 2:" + player2);
-                ImprimeMatriz(tablero, 0, 0);
-                System.out.println("");
+                    System.out.println("Ingrese POSICION X de la pieza que desea mover");
+                    x = sc.nextInt();
+                    System.out.println("Ingrese POSICION Y de la pieza que desea mover");
+                    y = sc.nextInt();
+                    System.out.println("Ingrese POSICION X donde desea mover pieza");
+                    moverx = sc.nextInt();
+                    System.out.println("Ingrese POSICION Y donde desea mover pieza");
+                    movery = sc.nextInt();
+                    try {
+                        if (tablero[x][y] instanceof Duques) {
+                            if (d.mover(tablero, x, y, moverx, movery) == true) {
+                                System.out.println(moverx + " " + movery);
+                                tablero[x][y] = new EspacioBlanco(' ');
+                                tablero[moverx][movery] = new Duques('O');
+                                System.out.println("Movimiento completado");
+                                tablero = d.comer(moverx, movery, tablero);
+                                gamer1 = true;
+                                gamer2 = false;
+                            } else {
+                                System.out.println("Movimiento invalido");
+                            }
+                        } else if (tablero[x][y] instanceof Rey) {
+                            if (rey.mover(tablero, x, y, moverx, movery) == true) {
 
-                System.out.println("Ingrese POSICION X de la pieza que desea mover");
-                x = sc.nextInt();
-                System.out.println("Ingrese POSICION Y de la pieza que desea mover");
-                y = sc.nextInt();
-                System.out.println("Ingrese POSICION X donde desea mover pieza");
-                moverx = sc.nextInt();
-                System.out.println("Ingrese POSICION Y donde desea mover pieza");
-                movery = sc.nextInt();
-                try {
-                    if (tablero[x][y] instanceof Duques) {
-                        if (d.mover(tablero, x, y, moverx, movery) == true) {
-                            System.out.println(moverx+" " +movery);
-                            tablero[x][y] = new EspacioBlanco(' ');
-                            tablero[moverx][movery] = new Duques('O');
-                            System.out.println("Movimiento completado");
-                            tablero = d.comer(moverx, movery, tablero);
-                            gamer1 = true;
-                            gamer2 = false;
+                                tablero[x][y] = new EspacioBlanco(' ');
+                                tablero[moverx][movery] = new Rey('R');
+                                System.out.println("Movimiento completado");
+                                tablero = rey.comer(moverx, movery, tablero);
+
+                                if ((tablero[moverx][movery] == tablero[0][0]) || (tablero[moverx][movery] == tablero[0][1]) || (tablero[moverx][movery] == tablero[1][0]) || (tablero[moverx][movery] == tablero[1][1])) {
+                                    System.out.println("");
+                                    System.out.println("FELICIDADES GANASTE LA PARTIDA");
+                                    win = true;
+                                } else if ((tablero[moverx][movery] == tablero[0][18]) || (tablero[moverx][movery] == tablero[0][17]) || (tablero[moverx][movery] == tablero[1][18]) || (tablero[moverx][movery] == tablero[1][17])) {
+                                    System.out.println("");
+                                    System.out.println("FELICIDADES GANASTE LA PARTIDA");
+                                    win = true;
+                                } else if ((tablero[moverx][movery] == tablero[18][0]) || (tablero[moverx][movery] == tablero[18][1]) || (tablero[moverx][movery] == tablero[17][0]) || (tablero[moverx][movery] == tablero[17][1])) {
+                                    System.out.println("");
+                                    System.out.println("FELICIDADES GANASTE LA PARTIDA");
+                                    win = true;
+                                } else if ((tablero[moverx][movery] == tablero[18][18]) || (tablero[moverx][movery] == tablero[18][17]) || (tablero[moverx][movery] == tablero[17][18]) || (tablero[moverx][movery] == tablero[17][17])) {
+                                    System.out.println("");
+                                    System.out.println("FELICIDADES GANASTE LA PARTIDA");
+                                    win = true;
+                                }
+                                gamer1 = true;
+                                gamer2 = false;
+                            } else {
+                                System.out.println("Movimiento invalido");
+                            }
                         } else {
-                            System.out.println("Movimiento invalido");
+                            {
+                                System.out.println("La posicion que ingreso no es PIEZA DUQUE INTENTE DE NUEVO");
+                            }
                         }
-                    } else if (tablero[x][y] instanceof Rey) {
-                        if (rey.mover(tablero, x, y, moverx, movery) == true) {
-
-                            tablero[x][y] = new EspacioBlanco(' ');
-                            tablero[moverx][movery] = new Rey('R');
-                            System.out.println("Movimiento completado");
-                            tablero = rey.comer(moverx, movery, tablero);
-                            gamer1 = true;
-                            gamer2 = false;
-                        } else {
-                            System.out.println("Movimiento invalido");
-                        }
-                    } else {
-                        {
-                            System.out.println("La posicion que ingreso no es PIEZA DUQUE INTENTE DE NUEVO");
-                        }
+                    } catch (Exception ex) {
+                        System.out.println("");
+                        System.out.println("POSICIONES FUERA DEL TABLERO");
+                        System.out.println("");
                     }
-                } catch (Exception ex) {
-                    System.out.println("");
-                    System.out.println("POSICIONES FUERA DEL TABLERO");
-                    System.out.println("");
-                }
 
+                }
             }
+            System.out.println("Desea jugar nueva partida [S/N]");
+            resp = sc.next().charAt(0);
         }
 
     }
