@@ -119,7 +119,7 @@ public class Rey extends Pieza {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
-                        if (matriz[moverx][movery + 1] instanceof Duques) {
+                        if (matriz[moverx][movery + 2] instanceof Duques) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
                     }
@@ -129,7 +129,7 @@ public class Rey extends Pieza {
                             matriz[moverx + 1][movery] = new EspacioBlanco(' ');
                         }
                     } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
-                        if (matriz[moverx][movery + 1] instanceof Duques) {
+                        if (matriz[moverx][movery + 2] instanceof Duques) {
                             matriz[moverx][movery + 1] = new EspacioBlanco(' ');
                         }
                     }
@@ -144,6 +144,46 @@ public class Rey extends Pieza {
                         }
                     }
                 } else if (movery == 18) {
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (moverx == 1) {
+                    if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery + 2] instanceof Duques) {
+                            matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (movery == 1) {
+                    if (matriz[moverx + 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques) {
+                            matriz[moverx + 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery + 1] instanceof Rebeldes) {
+                        if (matriz[moverx + 2][movery] instanceof Duques) {
+                            matriz[moverx][movery + 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (moverx == 17) {
+                    if (matriz[moverx - 1][movery] instanceof Rebeldes) {
+                        if (matriz[moverx - 2][movery] instanceof Duques) {
+                            matriz[moverx - 1][movery] = new EspacioBlanco(' ');
+                        }
+                    } else if (matriz[moverx][movery - 1] instanceof Rebeldes) {
+                        if (matriz[moverx][movery - 2] instanceof Duques) {
+                            matriz[moverx][movery - 1] = new EspacioBlanco(' ');
+                        }
+                    }
+                } else if (movery == 17) {
                     if (matriz[moverx - 1][movery] instanceof Rebeldes) {
                         if (matriz[moverx - 2][movery] instanceof Duques) {
                             matriz[moverx - 1][movery] = new EspacioBlanco(' ');
